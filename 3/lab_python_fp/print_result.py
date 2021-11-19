@@ -1,5 +1,4 @@
-from typing import Iterable, Iterator
-
+from typing import Iterable
 
 def print_result(func):
     def wrapper(*args, **kwargs):

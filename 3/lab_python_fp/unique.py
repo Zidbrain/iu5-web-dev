@@ -1,6 +1,3 @@
-from typing import Iterator
-
-
 class Unique(object):
     def __init__(self, items, **kwargs):
         self._iterator = iter(items)
