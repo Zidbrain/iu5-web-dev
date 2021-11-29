@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block headblock %}
+    <style>
+        .my-image {
+            max-width: 500px;
+            max-height: 500px;
+        }
+
+        .my-text {
+            max-width: 500px;
+        }
+    </style>
+{% endblock %}
+
+{% block bodyblock %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Название</th>
+            <th scope="col">Описание</th>
+            <th scope="col">Внешний вид</th>
+            <th scope="col">Компании изготовители</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <div class="text">{{ item.name }}</div>
+            </td>
+            <td>
+                <div class="text flex-lg-wrap my-text">{{ item.description }}</div>
+            </td>
+            <td>
+                <img class="img-fluid my-image" src="{% static item.image_url %}">
+            </td>
+            <td>
+                <ul class="nav flex-column">
+                    {% for company in companies %}
+                        <li class="nav-item"><a href="/company-icecreams?idcompany={{ company.idcompany }}"
+                                                class="nav-link active">{{ company.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

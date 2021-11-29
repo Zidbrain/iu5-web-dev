@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мороженное</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    {% block headblock %}
+    {% endblock %}
+</head>
+<body>
+<main>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Начальная страница</a>
+        </div>
+    </nav>
+    {% block bodyblock %}
+    {% endblock %}
+</main>
+</body>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+</html>

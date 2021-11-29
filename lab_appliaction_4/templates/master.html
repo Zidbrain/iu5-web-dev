@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block bodyblock %}
+    <div class="container-fluid justify-content-between">
+        <div class="row">
+            <ul class="nav btn-group-vertical bg-light align-self-start col">
+                {% for item in icecreams %}
+                    <li class="nav-item bg-light align-self-start shadow">
+                        <a href="details/{{ item.id }}" class="nav-link text-black">{{ item.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <ul class="nav btn-group-vertical bg-light col">
+                {% for item in companies %}
+                    <li class="nav-item bg-light shadow">
+                        <a href="company-icecreams?idcompany={{ item.idcompany }}" class="nav-link text-black">{{ item.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

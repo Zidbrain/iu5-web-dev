@@ -1,2 +1,5 @@
 *.pyc
-*docx
+*.docx
+venv/
+*.idea
+__pycache__

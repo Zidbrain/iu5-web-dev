@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block bodyblock %}
+    <table class="table">
+        <thead>
+        <th scope="col">Название компании</th>
+        <th scope="col">Производит мороженное</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="text">{{ company.name }}</td>
+            <td class="nav flex-column">
+                {% for item in icecreams %}
+                    <a href="/details/{{ item.id }}" class="nav-item nav-link active">{{ item.name }}</a>
+                {% endfor %}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}
