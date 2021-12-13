@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Master</title>
+    <style>
+        table.collapse{
+            border: 2px solid black;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        td.upper{
+            border: 2px solid black;
+            padding: 10px;
+        }
+        td{
+            border: 2px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+{% for value in values %}
+    <table class="collapse">
+        <tr>
+            <td class="upper" colspan="2">ID библиотеки</td>
+            <td class="upper" colspan="2">Название библиотеки</td>
+        </tr>
+        <tr>
+            <td class="upper" colspan="2">{{ value.0.idlibrary }}</td>
+            <td class="upper" colspan="2">{{ value.0.name }}</td>
+        </tr>
+        <tr>
+            <td>ID книги</td>
+            <td>Автор книги</td>
+            <td>Количество страниц</td>
+            <td>Жанр</td>
+        </tr>
+        {% for book in value.1 %}
+            <tr>
+                <td>{{ book.idbook }}</td>
+                <td>{{ book.author_name }}</td>
+                <td>{{ book.pages_count }}</td>
+                <td>{{ book.genre }}</td>
+            </tr>
+       {% endfor %}
+    </table>
+{% endfor %}
+</body>
+</html>
